@@ -22,3 +22,6 @@ ratings_test = pd.read_csv('ml-100k/ua.test', sep='\t', names=r_cols, encoding='
 #converting data to sframe objects
 train_data = graphlab.SFrame(ratings_base)
 test_data = graphlab.SFrame(ratings_test)
+
+#makes popularity model using training data
+popularity_model = graphlab.popularity_recommender.create(train_data, user_id='user_id', item_id='movie_id', target='rating')
