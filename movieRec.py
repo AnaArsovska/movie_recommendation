@@ -31,4 +31,4 @@ popularity_model = graphlab.popularity_recommender.create(train_data, user_id='u
 #popularity_recomm.print_rows(num_rows=25)
 
 #check whether the recommended movies are the highest rated ones
-ratings_base.groupby(by='movie_id')['rating'].mean().sort_values(ascending=False).head(20)
+#ratings_base.groupby(by='movie_id')['rating'].mean().sort_values(ascending=False).head(20)
