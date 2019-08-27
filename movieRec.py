@@ -1,4 +1,5 @@
 import pandas as pd 
+import graphlab
 
 #user data
 u_cols = ['user_id', 'age', 'sex', 'occupation', 'zipcode']
@@ -17,3 +18,7 @@ items = pd.read_csv('ml-100k/u.item', sep='|', names=i_cols, encoding='latin-1')
 #training and test data
 ratings_base = pd.read_csv('ml-100k/ua.base', sep='\t', names=r_cols, encoding='latin-1')
 ratings_test = pd.read_csv('ml-100k/ua.test', sep='\t', names=r_cols, encoding='latin-1')
+
+#converting data to sframe objects
+train_data = graphlab.SFrame(ratings_base)
+test_data = graphlab.SFrame(ratings_test)
