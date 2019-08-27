@@ -14,11 +14,6 @@ i_cols = ['movie id', 'movie title' ,'release date','video release date', 'IMDb 
  'Film-Noir', 'Horror', 'Musical', 'Mystery', 'Romance', 'Sci-Fi', 'Thriller', 'War', 'Western']
 items = pd.read_csv('ml-100k/u.item', sep='|', names=i_cols, encoding='latin-1')
 
-print(users.shape)
-users.head()
-
-print(ratings.shape)
-ratings.head()
-
-print(items.shape)
-items.head()
+#training and test data
+ratings_base = pd.read_csv('ml-100k/ua.base', sep='\t', names=r_cols, encoding='latin-1')
+ratings_test = pd.read_csv('ml-100k/ua.test', sep='\t', names=r_cols, encoding='latin-1')
